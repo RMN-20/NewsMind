@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Insights & Awareness Dashboard</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    body {
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(to bottom right, #e3f2fd, #fce4ec);
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+
+    header {
+      background-color: #1565c0;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 1.8em;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #0d47a1;
+      border-bottom: 2px solid #90caf9;
+      padding-bottom: 5px;
+    }
+
+    .chart-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .chart-card {
+      background: white;
+      border-radius: 16px;
+      padding: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+
+    .chart-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .wordcloud {
+      text-align: center;
+    }
+
+    .wordcloud img {
+      width: 100%;
+      max-width: 550px;
+      border-radius: 10px;
+      margin-top: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .wellness-card {
+      background: linear-gradient(135deg, #bbdefb, #f3e5f5);
+      border-radius: 18px;
+      padding: 25px;
+      margin-top: 35px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      transition: 0.3s;
+    }
+
+    .wellness-card:hover {
+      transform: scale(1.01);
+    }
+
+    .wellness-card h3 {
+      color: #4a148c;
+      font-size: 1.6em;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .suggestion {
+      font-size: 1.05em;
+      margin: 10px 0;
+      padding: 10px;
+      border-left: 4px solid #7e57c2;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 6px;
+      line-height: 1.5;
+      animation: fadeIn 0.8s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 10px;
+      color: #555;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #0d47a1;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Mental Awareness & News Insight Dashboard
+  </header>
+
+  <div class="container">
+    <h2>Topic: {{ topic | title }}</h2>
+
+    <div class="chart-container">
+      <div class="chart-card" id="pieChart"></div>
+      <div class="chart-card" id="barChart"></div>
+      <div class="chart-card" id="trendChart"></div>
+      <div class="chart-card" id="radarChart"></div>
+    </div>
+
+    <div class="wordcloud">
+      <h2>Word Cloud Representation</h2>
+      <img src="{{ url_for('static', filename=wordcloud) }}" alt="Word Cloud">
+    </div>
+
+    <div class="wellness-card">
+      <h3>Smart Wellness Suggestions</h3>
+      {% for tip in suggestions %}
+        <div class="suggestion">{{ tip }}</div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <footer>
+    <p>Developed for <b>NewsMind</b> | <a href="/">Back to Home</a></p>
+  </footer>
+
+  <script>
+    const pieData = {{ pie_json | safe }};
+    const barData = {{ bar_json | safe }};
+    const trendData = {{ trend_json | safe }};
+    const radarData = {{ radar_json | safe }};
+
+    Plotly.newPlot('pieChart', pieData.data, pieData.layout);
+    Plotly.newPlot('barChart', barData.data, barData.layout);
+    Plotly.newPlot('trendChart', trendData.data, trendData.layout);
+    Plotly.newPlot('radarChart', radarData.data, radarData.layout);
+  </script>
+</body>
+</html>
