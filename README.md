@@ -35,39 +35,6 @@ The project consists of three major modules:
 | **Environment** | Virtual Environment (venv) |
 
 ---
-
-## Folder Structure
-
-NewsMind/
-│
-├── app/
-│   ├── **init**.py
-│   ├── news_fetcher.py       → Fetches real-time news via API
-│   ├── summarizer.py         → Handles extractive summarization
-│   ├── sentiment.py          → Performs VADER sentiment analysis
-│
-├── static/
-│   ├── style.css             → Styling for frontend
-│
-├── templates/
-│   ├── index.html            → Homepage with topic search and summaries
-│   ├── insights.html         → Dashboard with emotion/sentiment charts
-│
-├── screenshots/              → Project UI screenshots
-│   ├── sports_news_cards.png
-│   ├── sentiment_dashboard.png
-│   ├── emotion_wordcloud.png
-│   ├── wellness_suggestions.png
-│
-├── main.py                   → Flask entry point
-├── requirements.txt          → List of dependencies
-├── README.md                 → Project documentation
-└── venv/                     → Virtual environment (optional)
-
-````
-
----
-
 ## Setup and Execution Steps
 
 ### 1. Create and Activate Virtual Environment
