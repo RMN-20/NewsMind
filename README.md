@@ -37,53 +37,6 @@ The project consists of three major modules:
 ---
 
 ## Folder Structure
-Got it 👍
-Below is the **clean, professional, copy-paste ready UPDATED `README.md` markdown code** with **proper screenshot section, captions, and GitHub-standard formatting**.
-
-You can **directly replace your existing README.md** with this or merge it safely.
-
----
-
-```md
-# NewsMind: NLP-based News Summarizer & Sentiment Tracker for Mental Health Awareness 
-
-## Overview
-**NewsMind** is an intelligent web-based application that combines **Natural Language Processing (NLP)**, **Sentiment Analysis**, and **Emotion Detection** to provide emotionally aware news summaries.  
-It enables users to stay informed while remaining conscious of their **mental well-being** by analyzing the emotional tone of daily news consumption.
-
-The system automatically:
-- Fetches **real-time news** from APIs  
-- Generates **concise summaries** using NLP  
-- Performs **sentiment classification** (Positive / Negative / Neutral)  
-- Detects **emotional tones** (Joy, Fear, Sadness, etc.)  
-- Visualizes results using **interactive dashboards** (Pie, Bar, Radar, and Word Cloud)  
-- Provides **awareness suggestions** based on emotional trends  
-
----
-
-## System Architecture
-The project consists of three major modules:
-1. **Data Fetching Module** — Uses API to retrieve real-time news articles  
-2. **Processing Module** — Handles text cleaning, summarization, sentiment analysis, and emotion detection  
-3. **Insights Module** — Displays sentiment and emotion visualizations with mental wellness suggestions  
-
----
-
-## Technology Stack
-
-| Category | Tools / Libraries |
-|---------|------------------|
-| **Programming Language** | Python 3.x |
-| **Framework** | Flask |
-| **Frontend** | HTML, CSS, Bootstrap |
-| **NLP Libraries** | NLTK, VADER, NRCLex |
-| **Visualization** | Plotly, WordCloud |
-| **Data Handling** | Pandas, Requests |
-| **Environment** | Virtual Environment (venv) |
-
----
-
-## Folder Structure
 
 NewsMind/
 │
@@ -179,9 +132,9 @@ Emotion-aware prompts promote **balanced and mindful news consumption**.
 
 ---
 
-## 📸 Application Screenshots
+## Application Screenshots
 
-### 📰 News Fetching & Summarization
+### News Fetching & Summarization
 
 <p align="center">
   <img src="screenshots/sports_news_cards.png" width="800"/>
@@ -192,7 +145,7 @@ Emotion-aware prompts promote **balanced and mindful news consumption**.
 
 ---
 
-### 📊 Sentiment Analysis Dashboard
+### Sentiment Analysis Dashboard
 
 <p align="center">
   <img src="screenshots/sentiment_dashboard.png" width="800"/>
@@ -203,7 +156,7 @@ Emotion-aware prompts promote **balanced and mindful news consumption**.
 
 ---
 
-### 🧠 Emotion Detection & Word Cloud
+### Emotion Detection & Word Cloud
 
 <p align="center">
   <img src="screenshots/emotion_wordcloud.png" width="800"/>
@@ -214,7 +167,7 @@ Emotion-aware prompts promote **balanced and mindful news consumption**.
 
 ---
 
-### 🌱 Smart Wellness Suggestions
+### Smart Wellness Suggestions
 
 <p align="center">
   <img src="screenshots/wellness_suggestions.png" width="800"/>
